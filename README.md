@@ -2,13 +2,21 @@
 
 
 
-This project focuses on detecting \*\*breast cancer from histopathology images\*\* using \*\*Deep Learning techniques\*\*.  
+!\[Python](https://img.shields.io/badge/python-3.11-blue)
 
-Multiple approaches were implemented and compared, including a \*\*Baseline CNN\*\*, \*\*Class Weighting\*\*, \*\*Data Augmentation\*\*, and \*\*Transfer Learning with MobileNetV2\*\*.
+!\[TensorFlow](https://img.shields.io/badge/tensorflow-2.13-orange)
+
+!\[License](https://img.shields.io/badge/license-MIT-green)
 
 
 
-The goal of the project is to \*\*maximize cancer detection (recall)\*\* rather than just accuracy, which is critical in medical diagnosis tasks.
+This project focuses on detecting \*\*breast cancer from histopathology images\*\* using \*\*Deep Learning\*\*.  
+
+It implements multiple approaches including \*\*Baseline CNN\*\*, \*\*Class Weighting\*\*, \*\*Data Augmentation\*\*, and \*\*Transfer Learning with MobileNetV2\*\*.
+
+
+
+The main goal is to \*\*maximize cancer detection (recall)\*\*, which is crucial for medical diagnosis.
 
 
 
@@ -28,13 +36,11 @@ Early detection significantly improves survival rates.
 
 This project builds a \*\*binary image classifier\*\* to predict whether a tissue image is:
 
+
+
 \- \*\*Benign (0)\*\*
 
 \- \*\*Malignant (1)\*\*
-
-
-
----
 
 
 
@@ -42,21 +48,15 @@ This project builds a \*\*binary image classifier\*\* to predict whether a tissu
 
 
 
-\- \*\*Dataset Name:\*\* Breast Cancer Histopathological Images (IDC)
+\- \*\*Dataset Name:\*\* Breast Cancer Histopathological Images (IDC)  
 
-\- \*\*Image Size:\*\* 50×50 pixels (RGB)
+\- \*\*Image Size:\*\* 50×50 pixels (RGB)  
 
-\- \*\*Total Images:\*\* ~267,000+
+\- \*\*Total Images:\*\* ~267,000+  
 
-\- \*\*Classes:\*\*
+\- \*\*Classes:\*\* Benign, Malignant  
 
-&nbsp; - Benign
-
-&nbsp; - Malignant
-
-\- \*\*Data Source:\*\* Public medical dataset (IDC)
-
-
+\- \*\*Source:\*\* Public medical dataset  
 
 ---
 
@@ -64,13 +64,11 @@ This project builds a \*\*binary image classifier\*\* to predict whether a tissu
 
 \## 📁 Project Structure
 
-
-
 Breast\_Cancer\_Classification/
 
 │
 
-├── data/
+├── data/ # Raw dataset (not tracked in GitHub)
 
 │ ├── benign/
 
@@ -78,7 +76,7 @@ Breast\_Cancer\_Classification/
 
 │
 
-├── models/
+├── models/ # Saved trained models
 
 │ ├── baseline\_cnn.h5
 
@@ -88,15 +86,15 @@ Breast\_Cancer\_Classification/
 
 │
 
-├── results/
-
-│ ├── confusion\_matrix.png
+├── results/ # Plots \& metrics
 
 │ ├── accuracy\_plot.png
 
+│ └── confusion\_matrix.png
+
 │
 
-├── src/
+├── src/ # Source code
 
 │ └── cancernet.py
 
@@ -104,9 +102,9 @@ Breast\_Cancer\_Classification/
 
 ├── README.md
 
-└── requirements.txt
+├── requirements.txt
 
-
+└── .gitignore
 
 
 
@@ -130,21 +128,17 @@ Breast\_Cancer\_Classification/
 
 \### 2️⃣ Class Weighting
 
-\- Handled severe class imbalance
+\- Handles severe class imbalance
 
-\- Improved malignant class recall
+\- Improves recall for malignant class
 
 
 
 \### 3️⃣ Data Augmentation
 
-\- Rotation
+\- Rotation, zoom, horizontal flip
 
-\- Zoom
-
-\- Horizontal flip
-
-\- Improved generalization
+\- Improves generalization
 
 
 
@@ -160,11 +154,45 @@ Breast\_Cancer\_Classification/
 
 \### 5️⃣ Fine-Tuning
 
-\- Unfroze top layers of MobileNetV2
+\- Unfreezes top layers of MobileNetV2
 
-\- Lower learning rate
+\- Lowers learning rate
 
-\- Improved feature adaptation
+\- Better feature adaptation
+
+
+
+---
+
+
+
+\## 📊 Results
+
+
+
+\### Accuracy Plot
+
+!\[Accuracy Plot](results/accuracy\_plot.png)
+
+
+
+\### Confusion Matrix
+
+!\[Confusion Matrix](results/confusion\_matrix.png)
+
+
+
+\### Sample Metrics (Example from final run)
+
+| Class      | Precision | Recall | F1-score | Support |
+
+|----------- |---------- |------- |--------- |-------- |
+
+| Benign (0) | 0.72      | 0.54   | 0.62     | 38234   |
+
+| Malignant (1)| 0.29    | 0.47   | 0.36     | 15171   |
+
+| \*\*Accuracy\*\*|          |        | 0.52     | 53405   |
 
 
 
@@ -176,70 +204,77 @@ Breast\_Cancer\_Classification/
 
 
 
-\- Python 3.11
+\- Python 3.11  
 
-\- TensorFlow / Keras
+\- TensorFlow / Keras  
 
-\- NumPy
+\- NumPy  
 
-\- Scikit-learn
+\- Scikit-learn  
 
-\- Matplotlib
+\- Matplotlib  
 
-\- OpenCV
+\- OpenCV  
 
 
 
 ---
 
-&nbsp;   \*\*Results section\*\* 
+
+
+\## 🚀 How to Run
 
 
 
-\## 🚀 How to Run the Project
-
-
+1\. \*\*Clone the repo:\*\*
 
 ```bash
+
+git clone https://github.com/J-Nandini-eng/Breast\_Cancer\_Classification.git
+
+cd Breast\_Cancer\_Classification
+
+
+
+Create a virtual environment \& install dependencies:
+
+
+
+python -m venv venv
+
+\# Windows
+
+venv\\Scripts\\activate
+
+\# Linux / Mac
+
+source venv/bin/activate
+
+
+
+pip install -r requirements.txt
+
+
+
+
+
+Run the main script:
+
+
 
 python src/cancernet.py
 
 
-\## 📊 Model Performance Summary
 
 
 
-\- Training Accuracy: ~85%
-
-\- Validation Accuracy: ~76%
-
-\- Malignant Recall: ~47–51%
-
-\- Dataset was highly imbalanced, so recall was prioritized over accuracy
+The script will train the model, compute class weights, optionally apply data augmentation, perform transfer learning, and save the model and results in models/ and results/.
 
 
 
-The model is intended for \*\*educational and research purposes only\*\*, not clinical use.
+\## 📌 License
 
-
-
----
-
-
-
-\## 👩‍💻 Author
-
-
-
-\*\*Nandini\*\*  
-
-GitHub: https://github.com/J-Nandini-eng
-
-
-
-
-
-
+MIT License
 
 
 
