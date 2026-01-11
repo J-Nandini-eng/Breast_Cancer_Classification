@@ -1,6 +1,19 @@
+# Dataset (VERY IMPORTANT – do not upload medical data)
 data/
+
+# Python cache & compiled files
 __pycache__/
+*.pyc
+
+# Model files
 *.h5
 *.keras
-*.pyc
+
+# Virtual environments & secrets
 .env
+
+# IDE & editor settings
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints/
