@@ -64,51 +64,43 @@ This project builds a \*\*binary image classifier\*\* to predict whether a tissu
 
 \## 📁 Project Structure
 
-Breast\_Cancer\_Classification/
+---Breast\_Cancer\_Classification/
 
 │
 
-├── data/ # Raw dataset (not tracked in GitHub)
+├── data/                   # Raw dataset (not tracked in GitHub)
 
-│ ├── benign/
+│   ├── benign/
 
-│ └── malignant/
-
-│
-
-├── models/ # Saved trained models
-
-│ ├── baseline\_cnn.h5
-
-│ ├── class\_weighted\_model.h5
-
-│ └── mobilenet\_finetuned.h5
+│   └── malignant/
 
 │
 
-├── results/ # Plots \& metrics
+├── models/                 # Saved trained models
 
-│ ├── accuracy\_plot.png
-
-│ └── confusion\_matrix.png
+│   └── (e.g., baseline\_cnn.h5, class\_weighted\_model.h5, mobilenet\_finetuned.h5)
 
 │
 
-├── src/ # Source code
+├── results/                # Plots \& metrics
 
-│ └── cancernet.py
+│   └── (accuracy\_plot.png, confusion\_matrix.png)
 
 │
 
-├── README.md
+├── src/                    # Source code
 
-├── requirements.txt
+│   └── cancernet.py
 
-└── .gitignore
+│
 
+├── .gitignore
 
+├── LICENSE.txt             # MIT License
 
----
+├── README.md               # Project documentation
+
+└── requirements.txt        # Python dependencies
 
 
 
@@ -236,15 +228,17 @@ cd Breast\_Cancer\_Classification
 
 
 
-Create a virtual environment \& install dependencies:
-
-
+\#Create a virtual environment \& install dependencies:
 
 python -m venv venv
+
+
 
 \# Windows
 
 venv\\Scripts\\activate
+
+
 
 \# Linux / Mac
 
